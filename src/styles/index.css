@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-obsidian: #0b0d13;
+  --bg-pill: rgba(11, 13, 19, 0.88);
+  --bg-hub: #0c0e14;
+  --surface-card: rgba(255, 255, 255, 0.035);
+  --surface-card-hover: rgba(255, 255, 255, 0.06);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-refract: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  --accent-emerald: #10b981;
+  --accent-amber: #f59e0b;
+  --accent-cyan: #06b6d4;
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  
+  font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: dark;
+  background: transparent;
+  color: var(--text-primary);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* Glassmorphism Classes */
+.pill-container {
+  background: var(--bg-pill);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 
+    0 12px 32px -4px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+}
+
+.hub-container {
+  background: var(--bg-hub);
+  color: var(--text-primary);
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 20px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover {
+  background: var(--surface-card-hover);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Equalizer Bars */
+.eq-bar {
+  width: 3px;
+  border-radius: 9999px;
+  background: var(--accent-emerald);
+  transition: height 0.08s ease-out;
+}
+
+/* Spider-Sense and UI Animations (Calm & Organic) */
+@keyframes spiderSenseJitter {
+  0% {
+    opacity: 0.95;
+    transform: scale(1) translate(0, 0);
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1.04) translate(-1px, 0.5px);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(0.98) translate(0.8px, -0.8px);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1.03) translate(-0.5px, -0.8px);
+  }
+  100% {
+    opacity: 0.95;
+    transform: scale(1.02) translate(0.5px, 0.5px);
+  }
+}
+
+/* Clean Snappy Pop In & Pop Out Animations */
+@keyframes spideyPopIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  65% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes spideyPopOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+}
+
+.animate-spidey-enter {
+  animation: spideyPopIn 0.22s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-spidey-exit {
+  animation: spideyPopOut 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+
+@keyframes pulse-emerald {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.92);
+  }
+}
+
+.animate-pulse-emerald {
+  animation: pulse-emerald 1.5s infinite ease-in-out;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 2s linear infinite;
+}
+
+/* Monospace text */
+.font-mono {
+  font-family: 'Geist Mono', monospace;
+}

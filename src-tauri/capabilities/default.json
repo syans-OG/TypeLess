@@ -1,0 +1,13 @@
+{
+  "identifier": "default",
+  "description": "Default capabilities for TypeLess desktop app",
+  "windows": ["*"],
+  "permissions": [
+    "core:default",
+    "core:event:default",
+    "core:event:allow-listen",
+    "core:event:allow-emit",
+    "core:window:default",
+    "core:webview:default"
+  ]
+}

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="pinPinkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF1493" />
+      <stop offset="50%" stop-color="#FF007F" />
+      <stop offset="100%" stop-color="#D6006C" />
+    </linearGradient>
+
+    <linearGradient id="pinCyanGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0088FF" />
+      <stop offset="50%" stop-color="#00D2FF" />
+      <stop offset="100%" stop-color="#00F0FF" />
+    </linearGradient>
+
+    <radialGradient id="pinCoreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#00F0FF" />
+      <stop offset="100%" stop-color="#00F0FF" stop-opacity="0" />
+    </radialGradient>
+
+    <filter id="badgeNeonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- ======================================================== -->
+  <!-- THE OFFICIAL TYPELESS PUNK-MIC PIN BADGE APP ICON        -->
+  <!-- ======================================================== -->
+  <g transform="translate(256, 256)">
+
+    <!-- 1. SPIDER-PUNK CHROMATIC GLITCH OFFSET SHADOWS -->
+    <circle cx="8" cy="8" r="205" fill="url(#pinPinkGrad)" />
+    <circle cx="-7" cy="-7" r="205" fill="url(#pinCyanGrad)" />
+
+    <!-- 2. SOLID OBSIDIAN PIN BADGE BASE -->
+    <circle cx="0" cy="0" r="205" fill="#0D0E12" stroke="#FFFFFF" stroke-width="8.5" />
+
+    <!-- Inner Neon Stitched Ring -->
+    <circle cx="0" cy="0" r="180" fill="none" stroke="#FF007F" stroke-width="4.5" stroke-dasharray="10 8" opacity="0.85" />
+
+
+    <!-- 3. PUNK STUDIO MICROPHONE CAPSULE & VOICE SOUNDWAVE -->
+    <!-- Microphone Top Dome Capsule -->
+    <rect x="-52" y="-105" width="104" height="130" rx="52" fill="#FFFFFF" />
+
+    <!-- Equalizer Soundwave Slits on Capsule Body -->
+    <line x1="-38" y1="-60" x2="38" y2="-60" stroke="#0D0E12" stroke-width="8" stroke-linecap="round" />
+    <line x1="-46" y1="-28" x2="46" y2="-28" stroke="#FF007F" stroke-width="9" stroke-linecap="round" />
+    <line x1="-38" y1="4" x2="38" y2="4" stroke="#0D0E12" stroke-width="8" stroke-linecap="round" />
+
+    <!-- Center Glowing Voice Transducer Node -->
+    <circle cx="0" cy="-28" r="13" fill="#FFFFFF" filter="url(#badgeNeonGlow)" />
+    <circle cx="0" cy="-28" r="6.5" fill="#00F0FF" />
+
+    <!-- Microphone U-Shaped Shockmount Frame -->
+    <path
+      d="M -70 -20 
+         C -70 72, 70 72, 70 -20"
+      stroke="#FFFFFF"
+      stroke-width="10"
+      stroke-linecap="round"
+      fill="none"
+    />
+
+    <!-- Microphone Stand Stem -->
+    <line x1="0" y1="62" x2="0" y2="115" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" />
+
+    <!-- Microphone Heavy Base Plate -->
+    <line x1="-46" y1="115" x2="46" y2="115" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" />
+    <line x1="-32" y1="128" x2="32" y2="128" stroke="#FF007F" stroke-width="7" stroke-linecap="round" />
+
+  </g>
+</svg>

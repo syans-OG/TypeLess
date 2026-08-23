@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" width="1000" height="460">
+  <defs>
+    <linearGradient id="punkPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF1493" />
+      <stop offset="50%" stop-color="#FF007F" />
+      <stop offset="100%" stop-color="#D6006C" />
+    </linearGradient>
+
+    <linearGradient id="punkCyan" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00D2FF" />
+      <stop offset="100%" stop-color="#00F0FF" />
+    </linearGradient>
+
+    <filter id="badgeShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="4" dy="6" stdDeviation="0" flood-color="#FF007F" />
+    </filter>
+  </defs>
+
+  <g transform="translate(500, 230)">
+
+    <!-- 1. GRUNGY PUNK SPIDERWEB BACKGROUND (Pink & Cyan Raw Web) -->
+    <!-- Outer Radial Web Spines -->
+    <g stroke="url(#punkPink)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M -480 -90 L 480 80" />
+      <path d="M -460 -190 L 460 170" />
+      <path d="M -380 -210 L 380 200" />
+      <path d="M -220 -220 L 220 220" />
+      <path d="M -40 -230 L 40 230" />
+      <path d="M 180 -220 L -180 220" />
+      <path d="M 360 -210 L -360 210" />
+      <path d="M 460 -160 L -460 160" />
+
+      <!-- Concentric Jagged Web Arcs (Layer 1 - Outer) -->
+      <path d="M -440 -50 Q -380 -140 -260 -170 Q -100 -190 0 -200 Q 140 -190 280 -160 Q 400 -120 440 -40 Q 420 80 300 150 Q 160 190 0 200 Q -180 190 -320 140 Q -420 60 -440 -50 Z" />
+
+      <!-- Concentric Jagged Web Arcs (Layer 2 - Mid) -->
+      <path d="M -340 -35 Q -280 -105 -180 -125 Q -70 -140 0 -145 Q 100 -140 200 -120 Q 300 -90 330 -30 Q 310 60 210 110 Q 110 140 0 145 Q -120 140 -230 100 Q -310 40 -340 -35 Z" />
+
+      <!-- Concentric Jagged Web Arcs (Layer 3 - Inner) -->
+      <path d="M -220 -20 Q -180 -65 -110 -80 Q -40 -90 0 -95 Q 60 -90 120 -75 Q 180 -55 200 -18 Q 190 35 130 65 Q 60 90 0 92 Q -70 90 -140 60 Q -190 25 -220 -20 Z" />
+
+      <!-- Grungy Web Scratch Strands -->
+      <line x1="-380" y1="-120" x2="-350" y2="-70" stroke-width="2.5" />
+      <line x1="320" y1="-100" x2="360" y2="-50" stroke-width="2.5" />
+      <line x1="-260" y1="120" x2="-220" y2="150" stroke-width="2.5" />
+      <line x1="240" y1="110" x2="280" y2="140" stroke-width="2.5" />
+    </g>
+
+    <!-- Cyan Accent Scratch Web Highlights -->
+    <g stroke="url(#punkCyan)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.8">
+      <path d="M -410 -60 Q -320 -150 -200 -170" />
+      <path d="M 220 -165 Q 350 -130 420 -50" />
+      <path d="M -300 130 Q -150 180 0 190" />
+      <path d="M 120 180 Q 280 145 380 70" />
+    </g>
+
+
+    <!-- 2. COLLAGE BLACK PAPER-CUTOUT BADGE CARDS (Offset Jagged Polygons) -->
+
+    <!-- Card 1: Letter T (Tilt -8deg) -->
+    <polygon points="-430,-120 -320,-135 -335,115 -445,100" fill="#FF007F" transform="translate(6, 6)" />
+    <polygon points="-430,-120 -320,-135 -335,115 -445,100" fill="#0D0E12" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="miter" />
+
+    <!-- Card 2: Letter Y (Tilt -4deg) -->
+    <polygon points="-330,-135 -230,-140 -240,110 -340,115" fill="#FF007F" transform="translate(6, 6)" />
+    <polygon points="-330,-135 -230,-140 -240,110 -340,115" fill="#0D0E12" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="miter" />
+
+    <!-- Card 3: Letter P (Tilt -1deg) -->
+    <polygon points="-240,-140 -140,-138 -150,112 -250,110" fill="#00F0FF" transform="translate(6, 6)" />
+    <polygon points="-240,-140 -140,-138 -150,112 -250,110" fill="#0D0E12" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="miter" />
+
+    <!-- Card 4: Letter E (Tilt 2deg) -->
+    <polygon points="-150,-138 -55,-130 -60,118 -155,112" fill="#FF007F" transform="translate(6, 6)" />
+    <polygon points="-150,-138 -55,-130 -60,118 -155,112" fill="#0D0E12" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="miter" />
+
+    <!-- Center Separator Pin Badge: Clean Microphone (No Triangles) -->
+    <g transform="translate(0, -6)">
+      <circle cx="0" cy="0" r="42" fill="#FF007F" />
+      <circle cx="0" cy="0" r="38" fill="#0D0E12" stroke="#FFFFFF" stroke-width="3.5" />
+      <!-- Punk Mic Symbol -->
+      <rect x="-10" y="-18" width="20" height="24" rx="10" fill="#FFFFFF" />
+      <line x1="-12" y1="-8" x2="12" y2="-8" stroke="#0D0E12" stroke-width="2.5" />
+      <line x1="-12" y1="-2" x2="12" y2="-2" stroke="#0D0E12" stroke-width="2.5" />
+      <path d="M -14 -4 C -14 12, 14 12, 14 -4" stroke="#FFFFFF" stroke-width="3" fill="none" />
+      <line x1="0" y1="12" x2="0" y2="20" stroke="#FFFFFF" stroke-width="3.5" />
+      <line x1="-8" y1="20" x2="8" y2="20" stroke="#FFFFFF" stroke-width="3.5" />
+    </g>
+
+    <!-- Card 5: Letter L (Tilt 4deg) -->
+    <polygon points="55,-130 150,-120 145,125 50,118" fill="#FF007F" transform="translate(6, 6)" />
+    <polygon points="55,-130 150,-120 145,125 50,118" fill="#0D0E12" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="miter" />
+
+    <!-- Card 6: Letter E (Tilt 7deg) -->
+    <polygon points="140,-120 235,-105 225,135 130,125" fill="#00F0FF" transform="translate(6, 6)" />
+    <polygon points="140,-120 235,-105 225,135 130,125" fill="#0D0E12" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="miter" />
+
+    <!-- Card 7: Letter S (Tilt 11deg) -->
+    <polygon points="225,-105 325,-85 310,148 210,135" fill="#FF007F" transform="translate(6, 6)" />
+    <polygon points="225,-105 325,-85 310,148 210,135" fill="#0D0E12" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="miter" />
+
+    <!-- Card 8: Letter S (Tilt 15deg) -->
+    <polygon points="315,-85 435,-55 410,165 295,148" fill="#FF007F" transform="translate(6, 6)" />
+    <polygon points="315,-85 435,-55 410,165 295,148" fill="#0D0E12" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="miter" />
+
+
+    <!-- 3. BOLD HAND-CUT PUNK TYPOGRAPHY -->
+
+    <!-- 'T' -->
+    <g transform="translate(-385, -10) rotate(-7)">
+      <path d="M -40 -80 L 40 -80 L 35 -45 L 12 -45 L 8 75 L -18 75 L -14 -45 L -36 -45 Z" fill="#FFFFFF" />
+      <polygon points="20,-80 35,-45 40,-80" fill="#FF007F" />
+    </g>
+
+    <!-- 'Y' -->
+    <g transform="translate(-285, -12) rotate(-4)">
+      <path d="M -38 -80 L -12 -25 L -12 75 L 15 75 L 15 -25 L 38 -80 L 10 -80 L 1 -50 L -8 -80 Z" fill="#FFFFFF" />
+    </g>
+
+    <!-- 'P' -->
+    <g transform="translate(-195, -14) rotate(-1)">
+      <path d="M -30 -80 L 22 -80 C 40 -80, 42 -40, 25 -20 L -5 -20 L -5 75 L -30 75 Z M -5 -58 L 14 -58 C 18 -58, 18 -42, 14 -42 L -5 -42 Z" fill="#FFFFFF" />
+    </g>
+
+    <!-- 'E' (First) -->
+    <g transform="translate(-105, -10) rotate(2)">
+      <path d="M -30 -80 L 35 -80 L 32 -54 L -5 -54 L -5 -36 L 26 -36 L 23 -10 L -5 -10 L -5 48 L 36 48 L 32 75 L -30 75 Z" fill="#FFFFFF" />
+    </g>
+
+    <!-- 'L' -->
+    <g transform="translate(100, -5) rotate(4)">
+      <path d="M -30 -80 L -4 -80 L -4 48 L 35 48 L 30 75 L -30 75 Z" fill="#FFFFFF" />
+    </g>
+
+    <!-- 'E' (Second) -->
+    <g transform="translate(180, 4) rotate(7)">
+      <path d="M -30 -80 L 35 -80 L 32 -54 L -5 -54 L -5 -36 L 26 -36 L 23 -10 L -5 -10 L -5 48 L 36 48 L 32 75 L -30 75 Z" fill="#FFFFFF" />
+    </g>
+
+    <!-- 'S' (First) -->
+    <g transform="translate(265, 18) rotate(11)">
+      <path d="M 32 -60 L 10 -60 C -15 -60, -25 -42, -10 -25 L 12 -5 C 32 15, 26 45, 0 48 L -30 48 L -28 20 L -5 20 C 6 20, 10 10, 0 0 L -20 -20 C -40 -40, -30 -80, 5 -80 L 35 -80 Z" fill="#FFFFFF" />
+    </g>
+
+    <!-- 'S' (Second) -->
+    <g transform="translate(360, 38) rotate(15)">
+      <path d="M 36 -60 L 14 -60 C -12 -60, -22 -42, -8 -25 L 14 -5 C 34 15, 28 45, 2 48 L -28 48 L -26 20 L -3 20 C 8 20, 12 10, 2 0 L -18 -20 C -38 -40, -28 -80, 7 -80 L 38 -80 Z" fill="#FFFFFF" />
+    </g>
+
+  </g>
+</svg>
