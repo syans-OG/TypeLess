@@ -150,8 +150,15 @@ impl WhisperEngine {
             _ => ModelSize::Base,
         };
 
-        // 1. Locate whisper-cli.exe in workspace or appdata
+        // 1. Locate whisper-cli.exe in bundled resources, current exe dir, workspace or appdata
+        let current_dir = std::env::current_exe().ok().and_then(|p| p.parent().map(|d| d.to_path_buf()));
         let exe_candidates = [
+            current_dir.as_ref().map(|d| d.join("resources").join("bin").join("Release").join("whisper-cli.exe")).unwrap_or_default(),
+            current_dir.as_ref().map(|d| d.join("resources").join("bin").join("whisper-cli.exe")).unwrap_or_default(),
+            current_dir.as_ref().map(|d| d.join("bin").join("Release").join("whisper-cli.exe")).unwrap_or_default(),
+            current_dir.as_ref().map(|d| d.join("whisper-cli.exe")).unwrap_or_default(),
+            PathBuf::from("src-tauri/resources/bin/Release/whisper-cli.exe"),
+            PathBuf::from("src-tauri/resources/bin/whisper-cli.exe"),
             PathBuf::from("src-tauri/bin/Release/whisper-cli.exe"),
             PathBuf::from("bin/Release/whisper-cli.exe"),
             Self::get_bin_dir().join("Release").join("whisper-cli.exe"),
@@ -160,6 +167,9 @@ impl WhisperEngine {
 
         let mut found_cli: Option<PathBuf> = None;
         for cand in &exe_candidates {
+            if cand.as_os_str().is_empty() {
+                continue;
+            }
             if cand.exists() {
                 if let Ok(abs) = cand.canonicalize() {
                     found_cli = Some(abs);
@@ -200,10 +210,30 @@ impl WhisperEngine {
             }
         };
 
-        // 2. Download model file
+        // 2. Locate or copy model file from bundled resources
         let models_dir = Self::get_models_dir();
         let model_file = models_dir.join(size.file_name());
-        Self::download_file_atomic(size.download_url(), &model_file, size.min_bytes()).await?;
+
+        if !model_file.exists() {
+            let bundled_candidates = [
+                current_dir.as_ref().map(|d| d.join("resources").join("models_ggml").join(size.file_name())).unwrap_or_default(),
+                PathBuf::from("src-tauri/resources/models_ggml").join(size.file_name()),
+            ];
+            for bundled in &bundled_candidates {
+                if !bundled.as_os_str().is_empty() && bundled.exists() {
+                    if let Some(p) = model_file.parent() {
+                        let _ = create_dir_all(p);
+                    }
+                    println!("Menemukan model offline di {bundled:?}, menyalin ke {model_file:?} ...");
+                    let _ = std::fs::copy(bundled, &model_file);
+                    break;
+                }
+            }
+        }
+
+        if !model_file.exists() {
+            Self::download_file_atomic(size.download_url(), &model_file, size.min_bytes()).await?;
+        }
 
         *self.cli_path.lock() = Some(cli);
         *self.model_path.lock() = Some(model_file);
