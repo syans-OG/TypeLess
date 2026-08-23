@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🕷️ TypeLess
+# TypeLess
 
 ### Offline Push-to-Talk AI Voice Typing for Windows
 
@@ -15,7 +15,7 @@
 <img src="./typeless-wordmark.svg" alt="TypeLess Wordmark" width="650" />
 
 <p align="center">
-  <b>TypeLess</b> is a blazing-fast, 100% offline, privacy-first Push-to-Talk voice typing application for Windows.<br/>
+  <b>TypeLess</b> is a fast, 100% offline, privacy-first Push-to-Talk voice typing application for Windows.<br/>
   Powered by local <b>Whisper AI</b>, native Win32 keystroke simulation, dynamic hallucination filters, and an interactive <b>Miles Morales Desktop Pet</b>.
 </p>
 
@@ -23,18 +23,18 @@
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-- 🎙️ **100% Offline & Private:** Runs local `whisper-cli` (`small` model) directly on your device. Zero cloud dependency, zero data leaks.
-- ⚡ **Seamless Push-to-Talk:** Hold `Ctrl + Win` (or configurable hotkey), speak naturally in Indonesian or English, and release. Text automatically types into whichever active window you are focused on!
-- 🕷️ **Interactive Spider-Verse Pet Overlay:** An animated Miles Morales mascot pops up above the taskbar when listening, pulses with audio RMS waveforms, and triggers Spider-Sense electric waves during transcription.
-- 🎚️ **System Tray Microphone Selector:** Dynamically switch audio input devices on the fly directly from the native Windows System Tray menu.
-- 🧹 **Zero-Hallucination Cleaner:** Proprietary regex and subtitle hallucination cleaner removes common whisper repetition loops and subtitle artifacts.
-- 🛡️ **Tauri v2 & Rust Core:** Lightweight RAM footprint (~35MB), instantaneous startup, and memory-safe architecture.
+- **100% Offline and Private:** Runs local `whisper-cli` (`small` model) directly on your device. Zero cloud dependency, zero data leaks.
+- **Seamless Push-to-Talk:** Hold `Ctrl + Win` (or configurable hotkey), speak naturally in Indonesian or English, and release. Text automatically types into whichever active window you are focused on.
+- **Interactive Spider-Verse Pet Overlay:** An animated Miles Morales mascot pops up above the taskbar when listening, pulses with audio RMS waveforms, and triggers Spider-Sense electric waves during transcription.
+- **System Tray Microphone Selector:** Dynamically switch audio input devices on the fly directly from the native Windows System Tray menu.
+- **Zero-Hallucination Cleaner:** Proprietary regex and subtitle hallucination cleaner removes common whisper repetition loops and subtitle artifacts.
+- **Tauri v2 and Rust Core:** Lightweight RAM footprint (~35MB), instantaneous startup, and memory-safe architecture.
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - **Node.js**: v18+ and `npm`
@@ -64,7 +64,7 @@ npm run tauri build
 
 ---
 
-## 🎨 Visual Identity & Brand System
+## Visual Identity and Brand System
 
 | Asset | Preview | Description |
 | :--- | :---: | :--- |
@@ -73,7 +73,7 @@ npm run tauri build
 
 ---
 
-## 🛠️ Architecture & Tech Stack
+## Architecture and Tech Stack
 
 ```
 TypeLess/
@@ -96,12 +96,12 @@ TypeLess/
 
 ---
 
-## 📄 License
+## License
 
 Distributed under the **MIT License**. See `LICENSE` for more information.
 
 ---
 
 <div align="center">
-  Crafted with ❤️ for high-performance voice productivity.
+  Crafted for high-performance voice productivity.
 </div>
