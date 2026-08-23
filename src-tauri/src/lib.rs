@@ -175,9 +175,16 @@ pub fn run() {
                 &[&about_i, &mic_submenu, &lang_submenu, &hotkey_submenu, &quit_i],
             )?;
 
+            let tray_icon = app.default_window_icon()
+                .cloned()
+                .unwrap_or_else(|| {
+                    tauri::image::Image::from_bytes(include_bytes!("../icons/32x32.png")).expect("Failed to load tray icon")
+                });
+
             let available_mics_for_event = available_mics.clone();
 
             let _tray = TrayIconBuilder::new()
+                .icon(tray_icon)
                 .menu(&menu)
                 .tooltip("TypeLess (Hold Right Ctrl to Speak)")
                 .on_menu_event(move |app, event| {
